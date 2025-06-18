@@ -8,6 +8,7 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
+  mounted: boolean;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -258,14 +259,14 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   // 避免水合不匹配，在客戶端載入完成前顯示預設內容
   if (!mounted) {
     return (
-      <LanguageContext.Provider value={{ language: 'en', setLanguage, t: (key) => key }}>
+      <LanguageContext.Provider value={{ language: 'en', setLanguage, t: (key) => key, mounted }}>
         {children}
       </LanguageContext.Provider>
     );
   }
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, mounted }}>
       {children}
     </LanguageContext.Provider>
   );
