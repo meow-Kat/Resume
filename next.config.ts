@@ -1,14 +1,19 @@
 import type { NextConfig } from "next";
 
+const isProduction = process.env.NODE_ENV === 'production';
+const isGitHubPages = process.env.GITHUB_PAGES === 'true';
+
 const nextConfig: NextConfig = {
   output: 'export',
   trailingSlash: true,
   images: {
     unoptimized: true,
   },
-  // 如果你的 GitHub Pages 有子目錄，請取消註解並修改以下設定
-  // basePath: '/你的repo名稱',
-  // assetPrefix: '/你的repo名稱/',
+  // 只在 GitHub Pages 部署時使用 basePath 和 assetPrefix
+  ...(isProduction && isGitHubPages ? { 
+    basePath: '/Resume',
+    assetPrefix: '/Resume'
+  } : {}),
 };
 
 export default nextConfig;

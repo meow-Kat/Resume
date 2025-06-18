@@ -1,33 +1,38 @@
+'use client';
+
 import { Code, Server, Database, Settings, Circle, Brain, Cloud } from 'lucide-react';
+import { useLanguage } from './LanguageContext';
 
 export default function MainContent() {
+  const { t } = useLanguage();
+
   return (
     <div className="flex-1 p-8 bg-primary">
       {/* 專業能力總結 */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold text-white mb-8">PROFESSIONAL SUMMARY</h2>
+        <h2 className="text-3xl font-bold text-white mb-8">{t('professionalSummary')}</h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           <div className="bg-secondary p-6 rounded-lg">
             <h3 className="text-white font-bold mb-4 flex items-center">
               <Code size={20} className="mr-2" />
-              核心技術專長
+              {t('coreSkills')}
             </h3>
             <div className="text-subtext text-sm space-y-3">
-              <p><strong className="text-white">前端開發領域：</strong>熟練運用 Vue.js、React、Next.js 等主流框架，展現優秀的 UI/UX 設計實現能力。</p>
-              <p><strong className="text-white">後端架構設計：</strong>深厚的 PHP/Laravel、Python/FastAPI 技術基礎，成功設計多個大型系統 API 架構。</p>
-              <p><strong className="text-white">AI 與新興技術：</strong>前瞻性的 LLM 智能對話平台開發，AI 圖資掃描系統實現。</p>
+              <p><strong className="text-white">{t('frontend')}</strong>{t('frontendDesc')}</p>
+              <p><strong className="text-white">{t('backend')}</strong>{t('backendDesc')}</p>
+              <p><strong className="text-white">{t('ai')}</strong>{t('aiDesc')}</p>
             </div>
           </div>
           
           <div className="bg-secondary p-6 rounded-lg">
             <h3 className="text-white font-bold mb-4 flex items-center">
               <Settings size={20} className="mr-2" />
-              系統架構與 DevOps
+              {t('systemArchitecture')}
             </h3>
             <div className="text-subtext text-sm space-y-3">
-              <p><strong className="text-white">架構設計：</strong>成功將 Python 桌面應用重構為 Web 應用，運用類 S3 物件儲存架構。</p>
-              <p><strong className="text-white">CI/CD 與自動化：</strong>建立完整的 DevOps 流程，K6 壓力測試系統整合 GitLab CI/CD。</p>
-              <p><strong className="text-white">即時通訊技術：</strong>SSE 數據傳輸結合 WebRTC 實現低延遲影片串流。</p>
+              <p><strong className="text-white">{t('architecture')}</strong>{t('architectureDesc')}</p>
+              <p><strong className="text-white">{t('cicd')}</strong>{t('cicdDesc')}</p>
+              <p><strong className="text-white">{t('realtime')}</strong>{t('realtimeDesc')}</p>
             </div>
           </div>
         </div>
@@ -36,24 +41,24 @@ export default function MainContent() {
           <div className="bg-secondary p-6 rounded-lg">
             <h3 className="text-white font-bold mb-4 flex items-center">
               <Database size={20} className="mr-2" />
-              商業價值創造
+              {t('businessValue')}
             </h3>
             <div className="text-subtext text-sm space-y-3">
-              <p><strong className="text-white">企業級專案：</strong>參與台積電、統一等大型企業專案，具備處理企業級需求的豐富經驗。</p>
-              <p><strong className="text-white">電商與金流：</strong>完整的電商功能 API 開發，NewPay 金流串接經驗。</p>
-              <p><strong className="text-white">客製化方案：</strong>WordPress 客製化開發、獨立系統開發等多元化解決方案。</p>
+              <p><strong className="text-white">{t('enterprise')}</strong>{t('enterpriseDesc')}</p>
+              <p><strong className="text-white">{t('ecommerce')}</strong>{t('ecommerceDesc')}</p>
+              <p><strong className="text-white">{t('customization')}</strong>{t('customizationDesc')}</p>
             </div>
           </div>
           
           <div className="bg-secondary p-6 rounded-lg">
             <h3 className="text-white font-bold mb-4 flex items-center">
               <Brain size={20} className="mr-2" />
-              創新與優化能力
+              {t('innovation')}
             </h3>
             <div className="text-subtext text-sm space-y-3">
-              <p><strong className="text-white">性能優化：</strong>高流量系統優化經驗，大幅縮短查詢回應時間，提升記憶體使用效率。</p>
-              <p><strong className="text-white">用戶體驗：</strong>創新的前端動畫效果和互動設計，持續提升產品用戶滿意度。</p>
-              <p><strong className="text-white">跨領域整合：</strong>AI、影音串流、即時通訊等新興技術融入傳統 Web 開發。</p>
+              <p><strong className="text-white">{t('performance')}</strong>{t('performanceDesc')}</p>
+              <p><strong className="text-white">{t('ux')}</strong>{t('uxDesc')}</p>
+              <p><strong className="text-white">{t('integration')}</strong>{t('integrationDesc')}</p>
             </div>
           </div>
         </div>
@@ -61,13 +66,13 @@ export default function MainContent() {
 
       {/* 技能 */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold text-white mb-8">TECHNICAL SKILLS</h2>
+        <h2 className="text-3xl font-bold text-white mb-8">{t('technicalSkills')}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Frontend */}
           <div>
             <div className="flex items-center mb-4">
               <Code size={20} className="text-white mr-2" />
-              <h3 className="text-white font-bold">Frontend</h3>
+              <h3 className="text-white font-bold">{t('frontendSkills')}</h3>
             </div>
             <ul className="space-y-2 text-subtext text-sm">
               <li>• HTML / CSS / JavaScript</li>
@@ -83,7 +88,7 @@ export default function MainContent() {
           <div>
             <div className="flex items-center mb-4">
               <Server size={20} className="text-white mr-2" />
-              <h3 className="text-white font-bold">Backend</h3>
+              <h3 className="text-white font-bold">{t('backendSkills')}</h3>
             </div>
             <ul className="space-y-2 text-subtext text-sm">
               <li>• PHP / Laravel</li>
@@ -98,7 +103,7 @@ export default function MainContent() {
           <div>
             <div className="flex items-center mb-4">
               <Cloud size={20} className="text-white mr-2" />
-              <h3 className="text-white font-bold">Database & Cloud</h3>
+              <h3 className="text-white font-bold">{t('databaseCloud')}</h3>
             </div>
             <ul className="space-y-2 text-subtext text-sm">
               <li>• MySQL</li>
@@ -111,7 +116,7 @@ export default function MainContent() {
           <div>
             <div className="flex items-center mb-4">
               <Brain size={20} className="text-white mr-2" />
-              <h3 className="text-white font-bold">AI & Integration</h3>
+              <h3 className="text-white font-bold">{t('aiIntegration')}</h3>
             </div>
             <ul className="space-y-2 text-subtext text-sm">
               <li>• LLM 模型串接</li>
@@ -126,86 +131,86 @@ export default function MainContent() {
 
       {/* 專案作品 */}
       <section>
-        <h2 className="text-3xl font-bold text-white mb-8">COLLECTION</h2>
+        <h2 className="text-3xl font-bold text-white mb-8">{t('collection')}</h2>
         
         {/* 峻魁智慧期間專案 */}
         <div className="mb-8">
-          <h3 className="text-white font-semibold mb-4">峻魁智慧期間專案</h3>
+          <h3 className="text-white font-semibold mb-4">{t('currentProjects')}</h3>
           <div className="space-y-3 text-subtext text-sm">
             <div className="flex items-start">
               <Circle size={8} className="text-white mt-2 mr-3 flex-shrink-0" fill="currentColor" />
-              <p><strong className="text-white">RSU 即時影音系統</strong> - SSE 數據傳輸 + WebRTC Live 影片串流技術</p>
+              <p><strong className="text-white">{t('rsuSystem')}</strong> - {t('rsuDesc')}</p>
             </div>
             <div className="flex items-start">
               <Circle size={8} className="text-white mt-2 mr-3 flex-shrink-0" fill="currentColor" />
-              <p><strong className="text-white">圖資工具 Web 化</strong> - Python 應用轉 Web，類 S3 物件儲存 + JSON 資料處理</p>
+              <p><strong className="text-white">{t('webTool')}</strong> - {t('webToolDesc')}</p>
             </div>
             <div className="flex items-start">
               <Circle size={8} className="text-white mt-2 mr-3 flex-shrink-0" fill="currentColor" />
-              <p><strong className="text-white">LLM 智能對話平台</strong> - Nuxt.js 前端 + AI 模型 API 串接</p>
+              <p><strong className="text-white">{t('llmPlatform')}</strong> - {t('llmDesc')}</p>
             </div>
             <div className="flex items-start">
               <Circle size={8} className="text-white mt-2 mr-3 flex-shrink-0" fill="currentColor" />
-              <p><strong className="text-white">自動化 CI/CD 系統</strong> - K6 壓測 + GitLab 整合部署</p>
+              <p><strong className="text-white">{t('cicdSystem')}</strong> - {t('cicdSystemDesc')}</p>
             </div>
             <div className="flex items-start">
               <Circle size={8} className="text-white mt-2 mr-3 flex-shrink-0" fill="currentColor" />
-              <p><strong className="text-white">AI 圖資掃描系統</strong> - 串接智能圖像識別與資訊擷取 API</p>
+              <p><strong className="text-white">{t('aiScanning')}</strong> - {t('aiScanningDesc')}</p>
             </div>
             <div className="flex items-start">
               <Circle size={8} className="text-white mt-2 mr-3 flex-shrink-0" fill="currentColor" />
-              <p><strong className="text-white">GenAI 場景替換系統</strong> - 生成式 AI 智能替換，保持物體、人物、動態變動串接</p>
+              <p><strong className="text-white">{t('genai')}</strong> - {t('genaiDesc')}</p>
             </div>
             <div className="flex items-start">
               <Circle size={8} className="text-white mt-2 mr-3 flex-shrink-0" fill="currentColor" />
-              <p><strong className="text-white">Microsoft 服務整合</strong> - 多項 Microsoft API 串接應用</p>
+              <p><strong className="text-white">{t('msIntegration')}</strong> - {t('msDesc')}</p>
             </div>
           </div>
         </div>
 
         {/* 創意數位期間專案 */}
         <div>
-          <h3 className="text-white font-semibold mb-4">創意數位期間專案</h3>
+          <h3 className="text-white font-semibold mb-4">{t('previousProjects')}</h3>
           <div className="space-y-3 text-subtext text-sm">
             <div className="flex items-start">
               <Circle size={8} className="text-white mt-2 mr-3 flex-shrink-0" fill="currentColor" />
-              <p><strong className="text-white">台積電家庭日活動</strong> - 完整活動資訊流程 API 開發 + 後台統計圖表系統</p>
+              <p><strong className="text-white">{t('tsmc')}</strong> - {t('tsmcDesc')}</p>
             </div>
             <div className="flex items-start">
               <Circle size={8} className="text-white mt-2 mr-3 flex-shrink-0" fill="currentColor" />
-              <p><strong className="text-white">鹿角向飲料店後台</strong> - 電商功能完整 API 開發與串接</p>
+              <p><strong className="text-white">{t('beverage')}</strong> - {t('beverageDesc')}</p>
             </div>
             <div className="flex items-start">
               <Circle size={8} className="text-white mt-2 mr-3 flex-shrink-0" fill="currentColor" />
-              <p><strong className="text-white">碳排放三合一網站</strong> - WordPress 客製化開發 + Elementor 整合</p>
+              <p><strong className="text-white">{t('carbon')}</strong> - {t('carbonDesc')}</p>
             </div>
             <div className="flex items-start">
               <Circle size={8} className="text-white mt-2 mr-3 flex-shrink-0" fill="currentColor" />
-              <p><strong className="text-white">碳足跡計算網站</strong> - 碳排放計算邏輯 + 視覺化圖表功能</p>
+              <p><strong className="text-white">{t('carbonCalc')}</strong> - {t('carbonCalcDesc')}</p>
             </div>
             <div className="flex items-start">
               <Circle size={8} className="text-white mt-2 mr-3 flex-shrink-0" fill="currentColor" />
-              <p><strong className="text-white">統一佳佳影音平台</strong> - 多頻道影音內容串接與管理</p>
+              <p><strong className="text-white">{t('unified')}</strong> - {t('unifiedDesc')}</p>
             </div>
             <div className="flex items-start">
               <Circle size={8} className="text-white mt-2 mr-3 flex-shrink-0" fill="currentColor" />
-              <p><strong className="text-white">GWS 企業形象網站</strong> - 客製化前端動效與互動設計</p>
+              <p><strong className="text-white">{t('gws')}</strong> - {t('gwsDesc')}</p>
             </div>
             <div className="flex items-start">
               <Circle size={8} className="text-white mt-2 mr-3 flex-shrink-0" fill="currentColor" />
-              <p><strong className="text-white">TKI 售票網站</strong> - Mantal 前端開發 + 抽獎系統功能</p>
+              <p><strong className="text-white">{t('tki')}</strong> - {t('tkiDesc')}</p>
             </div>
             <div className="flex items-start">
               <Circle size={8} className="text-white mt-2 mr-3 flex-shrink-0" fill="currentColor" />
-              <p><strong className="text-white">任你玩遊戲營運平台</strong> - 遊戲管理 API + 後台數據統計圖表</p>
+              <p><strong className="text-white">{t('gameplatform')}</strong> - {t('gameDesc')}</p>
             </div>
             <div className="flex items-start">
               <Circle size={8} className="text-white mt-2 mr-3 flex-shrink-0" fill="currentColor" />
-              <p><strong className="text-white">關埔國小報名系統</strong> - WordPress 客製化報名流程系統</p>
+              <p><strong className="text-white">{t('school')}</strong> - {t('schoolDesc')}</p>
             </div>
             <div className="flex items-start">
               <Circle size={8} className="text-white mt-2 mr-3 flex-shrink-0" fill="currentColor" />
-              <p><strong className="text-white">大新長照管理系統</strong> - 獨立開發前後端完整系統</p>
+              <p><strong className="text-white">{t('elderly')}</strong> - {t('elderlyDesc')}</p>
             </div>
           </div>
         </div>
