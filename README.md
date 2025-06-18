@@ -1,8 +1,6 @@
 # 鄭凱文 - 個人履歷網站
 
-> 使用 Next.js + TypeScript + Tailwind CSS + Lucide React 建立的響應式個人履歷網站
-
-https://meow-Kat.github.io/Resume/
+> 使用 Next.js + TypeScript + Tailwind CSS + Lucide React 建立的響應式個人履歷網站 https://meow-Kat.github.io/Resume/
 
 ## 👨‍💻 個人資訊
 
