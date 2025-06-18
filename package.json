@@ -4,7 +4,8 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "deploy": "cross-env NODE_ENV=production GITHUB_PAGES=true npm run build && gh-pages -d out",
+    "deploy:github": "cross-env NODE_ENV=production GITHUB_PAGES=true npm run build && gh-pages -d out -b gh-pages",
+    "deploy:clean": "gh-pages-clean",
     "preview": "npm run build && npx serve out -p 3000",
     "serve": "npx serve out -p 3000"
   },
