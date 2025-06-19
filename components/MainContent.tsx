@@ -122,7 +122,7 @@ export default function MainContent() {
       {/* 技能熟練度 */}
       <section id="skills" className="mb-12">
         <h2 className="text-3xl font-bold text-white mb-8 relative">
-          技能熟練度
+          {t('skillProficiency')}
           <div className="absolute bottom-0 left-0 w-20 h-1 bg-red-400 rounded-full"></div>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -53,7 +53,7 @@ export default function Sidebar() {
             <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-3 group-hover:bg-red-400 transition-colors duration-200">
               <MapPin size={16} className="text-white" />
             </div>
-            <span className="text-sm">台灣</span>
+            <span className="text-sm">{t('location')}</span>
           </div>
         </div>
       </div>
