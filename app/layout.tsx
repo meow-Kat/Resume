@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { LanguageProvider } from "@/components/LanguageContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,10 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "鄭凱文 - Full Stack Developer",
-  description: "鄭凱文的個人履歷網站 - Full Stack Developer，專精於前後端開發、AI整合、即時通訊、影音串流等技術",
-  keywords: "鄭凱文, Full Stack Developer, React, Vue, Laravel, Python, FastAPI, AI, LLM, WebRTC, SSE, 前端開發, 後端開發, 全端工程師",
-  authors: [{ name: "鄭凱文" }],
+  title: "鄭凱文 - R&D Engineer | 全端開發工程師",
+  description: "擁有跨領域專業背景的全端開發工程師，專精於前端框架、後端開發、AI整合與系統架構設計",
 };
 
 export default function RootLayout({
@@ -30,9 +27,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <LanguageProvider>
         {children}
-        </LanguageProvider>
       </body>
     </html>
   );

@@ -1,24 +1,20 @@
 @import "tailwindcss";
 
-@theme {
-  --color-primary: #181f2a;
-  --color-secondary: #232b3a;
-  --color-accent: #ff5e5e;
-  --color-text: #ffffff;
-  --color-subtext: #b0b8c1;
-  --color-background: #181f2a;
-  --color-foreground: #ffffff;
-  --font-family-sans: 'Noto Sans TC', 'Roboto', 'Arial', sans-serif;
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
 }
 
-:root {
-  --primary: #181f2a;
-  --secondary: #232b3a;
-  --accent: #ff5e5e;
-  --text: #ffffff;
-  --subtext: #b0b8c1;
-  --background: #181f2a;
-  --foreground: #ffffff;
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  
+  /* 履歷網站自定義顏色 */
+  --color-primary: #1a1a2e;
+  --color-secondary: #16213e;
+  --color-subtext: #a0a0a0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,11 +27,175 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Noto Sans TC', 'Roboto', 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-* {
-  box-sizing: border-box;
+/* 自定義 Tailwind 類別 */
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.text-subtext {
+  color: var(--color-subtext);
+}
+
+/* 滾動條樣式 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f87171; /* red-400 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ef4444; /* red-500 */
+}
+
+/* 平滑滾動 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 載入動畫 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* 漸變背景 */
+.gradient-bg {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+}
+
+/* 卡片陰影效果 */
+.card-shadow {
+  box-shadow: 0 10px 25px rgba(248, 113, 113, 0.1); /* red-400 with opacity */
+}
+
+.card-shadow:hover {
+  box-shadow: 0 20px 40px rgba(248, 113, 113, 0.2); /* red-400 with opacity */
+}
+
+/* 文字漸變效果 */
+.text-gradient {
+  background: linear-gradient(135deg, #f87171, #fca5a5); /* red-400 to red-300 */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 脈衝動畫 */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(248, 113, 113, 0.5); /* red-400 */
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(248, 113, 113, 0.8); /* red-400 */
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+/* 打字機效果 */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.typing-effect {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(30, end);
+  border-right: 2px solid #f87171; /* red-400 */
+}
+
+/* 漢堡選單動畫 */
+@keyframes hamburger-line {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(90deg) scale(1.1); }
+  100% { transform: rotate(180deg) scale(1); }
+}
+
+.hamburger-animate {
+  animation: hamburger-line 0.3s ease-in-out;
+}
+
+/* 選單滑入動畫 */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.3s ease-out;
+}
+
+.slide-out-left {
+  animation: slideOutLeft 0.3s ease-in;
+}
+
+/* 背景模糊動畫 */
+@keyframes backdropFadeIn {
+  from {
+    backdrop-filter: blur(0px);
+    background-color: rgba(0, 0, 0, 0);
+  }
+  to {
+    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.backdrop-fade-in {
+  animation: backdropFadeIn 0.3s ease-out;
+}
+
+/* 選單項目彈跳動畫 */
+@keyframes menuItemBounce {
+  0% { transform: translateY(20px) scale(0.9); opacity: 0; }
+  50% { transform: translateY(-5px) scale(1.05); opacity: 0.7; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.menu-item-bounce {
+  animation: menuItemBounce 0.4s ease-out;
 }

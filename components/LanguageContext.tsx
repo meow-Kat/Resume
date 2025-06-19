@@ -8,7 +8,6 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
-  mounted: boolean;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -78,7 +77,7 @@ const translations = {
     technicalSkills: 'TECHNICAL SKILLS',
     frontendSkills: 'Frontend',
     backendSkills: 'Backend',
-    databaseCloud: 'Database & Cloud',
+    databaseCloud: 'Database',
     aiIntegration: 'AI & Integration',
     
     // Collection
@@ -104,7 +103,7 @@ const translations = {
     
     tsmc: '台積電家庭日活動',
     tsmcDesc: '完整活動資訊流程 API 開發 + 後台統計圖表系統',
-    beverage: '鹿角向飲料店後台',
+    beverage: '鹿角巷飲料店後台',
     beverageDesc: '電商功能完整 API 開發與串接',
     carbon: '碳排放三合一網站',
     carbonDesc: 'WordPress 客製化開發 + Elementor 整合',
@@ -187,7 +186,7 @@ const translations = {
     technicalSkills: 'TECHNICAL SKILLS',
     frontendSkills: 'Frontend',
     backendSkills: 'Backend',
-    databaseCloud: 'Database & Cloud',
+    databaseCloud: 'Database',
     aiIntegration: 'AI & Integration',
     
     // Collection
@@ -259,14 +258,14 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   // 避免水合不匹配，在客戶端載入完成前顯示預設內容
   if (!mounted) {
     return (
-      <LanguageContext.Provider value={{ language: 'en', setLanguage, t: (key) => key, mounted }}>
+      <LanguageContext.Provider value={{ language: 'en', setLanguage, t: (key) => key }}>
         {children}
       </LanguageContext.Provider>
     );
   }
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t, mounted }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );
