@@ -37,7 +37,7 @@ function ProjectCard({ title, description, tech, isNew = false }: {
             <span className="ml-2 bg-red-400 text-white text-xs px-2 py-1 rounded-full">NEW</span>
           )}
         </h4>
-        <SquareCheckBig size={16} className="text-lime-400 group-hover:text-red-400 transition-colors duration-300" />
+        <SquareCheckBig size={16} className="text-lime-600 group-hover:text-red-400 transition-colors duration-300" />
       </div>
       <p className="text-subtext text-sm group-hover:text-white transition-colors duration-300">{description}</p>
       {tech && (
