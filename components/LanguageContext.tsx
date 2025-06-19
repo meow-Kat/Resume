@@ -79,7 +79,7 @@ const translations = {
     backendSkills: 'Backend',
     databaseCloud: 'Database',
     aiIntegration: 'AI & Integration',
-    skillProficiency: '技能熟練度',
+    skillProficiency: 'SKILL PROFICIENCY',
     location: '台灣',
     
     // Collection
@@ -186,7 +186,7 @@ const translations = {
     
     // Technical Skills
     technicalSkills: 'TECHNICAL SKILLS',
-    skillProficiency: 'Skill Proficiency',
+    skillProficiency: 'SKILL PROFICIENCY',
     frontendSkills: 'Frontend',
     backendSkills: 'Backend',
     databaseCloud: 'Database',

@@ -1,6 +1,6 @@
 'use client';
 
-import { Code, Server, Database, Settings, Circle, Brain, Cloud, Download, ExternalLink, ChevronRight } from 'lucide-react';
+import { Code, Server, Database, Settings, Circle, Brain, Cloud, Download, ExternalLink, BadgeAlert } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
 
 // 技能進度條組件
@@ -37,7 +37,7 @@ function ProjectCard({ title, description, tech, isNew = false }: {
             <span className="ml-2 bg-red-400 text-white text-xs px-2 py-1 rounded-full">NEW</span>
           )}
         </h4>
-        <ChevronRight size={16} className="text-subtext group-hover:text-red-400 transition-colors duration-300" />
+        <BadgeAlert size={16} className="text-subtext group-hover:text-red-400 transition-colors duration-300" />
       </div>
       <p className="text-subtext text-sm group-hover:text-white transition-colors duration-300">{description}</p>
       {tech && (
