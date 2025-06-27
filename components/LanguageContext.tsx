@@ -47,7 +47,7 @@ const translations = {
     backend: '後端架構設計：',
     backendDesc: '深厚的 PHP/Laravel、Python/FastAPI 技術基礎，成功設計多個大型系統 API 架構。',
     ai: 'AI 與新興技術：',
-    aiDesc: '前瞻性的 LLM 智能對話平台開發，AI 圖資掃描系統實現。',
+    aiDesc: '前瞻性的 LLM 智能對話平台開發與 AI 圖資系統實現。',
     
     systemArchitecture: '系統架構與 DevOps',
     architecture: '架構設計：',
@@ -216,7 +216,7 @@ const translations = {
     
     tsmc: 'TSMC Family Day Event',
     tsmcDesc: 'Complete event information flow API development + backend statistical chart system',
-    beverage: 'Antler Drink Shop Backend',
+    beverage: 'The Alley Drink Shop Backend',
     beverageDesc: 'Complete e-commerce API development and integration',
     carbon: 'Carbon Emission Three-in-One Website',
     carbonDesc: 'WordPress customization development + Elementor integration',
